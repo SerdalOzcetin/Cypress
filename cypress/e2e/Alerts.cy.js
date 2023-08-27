@@ -8,7 +8,7 @@ describe('Alerts', ()=>{
         cy.visit('https://the-internet.herokuapp.com/javascript_alerts')
         cy.get("button[onclick='jsAlert()']").click()   // cypress automatıcally closes the alert windows no need to use any code.
 
-        cy.on('window:alert',(t)=>{
+        cy.on('window:alert',(t)=>{                     // take a look at he cypress doc for events 
 
             expect(t).to.contain('I am a JS Alert');
 
