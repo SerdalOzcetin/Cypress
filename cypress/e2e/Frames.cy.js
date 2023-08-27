@@ -25,7 +25,7 @@ describe('handling frames',()=>{
 
     })
 
-    it("Approach03--by using cypress-iframe plugin",()=>{
+    it.only("Approach03--by using cypress-iframe plugin",()=>{
 
         // https://www.npmjs.com/package/cypress-iframe
         // npm install -D cypress-iframe
@@ -34,6 +34,8 @@ describe('handling frames',()=>{
         cy.frameLoaded("#mce_0_ifr"); // load the frame
         cy.iframe("#mce_0_ifr").clear().type("welcome {ctrl+a}");
         cy.get("button[title='Bold']").click();
+
+        cy.get("div[class='example'] h3").should('have.contain','An iFrame containing'); // no need to switch to defaultpage or parentpage lıke java.
 
         
 
