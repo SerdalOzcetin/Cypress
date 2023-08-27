@@ -1,0 +1,698 @@
+{
+  "stats": {
+    "suites": 9,
+    "tests": 15,
+    "passes": 9,
+    "pending": 3,
+    "failures": 3,
+    "testsRegistered": 15,
+    "passPercent": 60,
+    "pendingPercent": 20,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false,
+    "start": "2023-08-27T13:38:32.145Z",
+    "end": "2023-08-27T13:46:05.558Z",
+    "duration": 453413
+  },
+  "results": [
+    {
+      "uuid": "786c7737-a10e-434d-8eea-4a7355158b37",
+      "title": "",
+      "fullFile": "cypress/e2e/Assertions.cy.js",
+      "file": "cypress/e2e/Assertions.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d0d40257-b2f8-471e-96c1-fc1c3ccde5ba",
+          "title": "Assertions",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Imlicit assertions",
+              "fullTitle": "Assertions Imlicit assertions",
+              "timedOut": null,
+              "duration": 8594,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"https://opensource-demo.orangehrmlive.com/web/index.php/auth/login\");\n// should and\ncy.url().should('include', 'orangehrmlive.com');\ncy.url().should('eq', 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login').should('eq', 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login') // after capturind once the url no need to use again and again\n.should('contain', 'orangehrm');\n// in stead of should \"and\" can be used.\ncy.url().should('include', 'orangehrmlive.com') // after capturind once the url no need to use again and again\n.and('contain', 'orangehrm').and('eq', 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');\n// Negative Assertions\ncy.url().should('include', 'orangehrmlive.com') // after capturind once the url no need to use again and again\n.and('contain', 'orangehrm').and('not.contain', 'greenhrm') // Negative Assertions    \n.and('eq', 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');\ncy.title().should('include', 'Orange').and('eq', 'OrangeHRM').and('contain', 'HRM');\ncy.get('.orangehrm-login-branding > img').should('be.visible').and('exist');\ncy.xpath(\"//a\").should('have.length', 5); // check the number of links\ncy.xpath(\"//input[@placeholder='Username']\").type(\"Admin\"); // provide a value into input box\ncy.xpath(\"//input[@placeholder='Username']\").should(\"have.value\", \"Admin\");",
+              "err": {},
+              "uuid": "6d97189a-0b7e-4ebb-9790-376397bb0f96",
+              "parentUUID": "d0d40257-b2f8-471e-96c1-fc1c3ccde5ba",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Explicit assertions",
+              "fullTitle": "Assertions Explicit assertions",
+              "timedOut": null,
+              "duration": 8461,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"https://opensource-demo.orangehrmlive.com/web/index.php/auth/login\");\ncy.get(\"input[placeholder='Username']\").type(\"Admin\");\ncy.get(\"input[placeholder='Password']\").type(\"admin123\");\ncy.get(\"button[type='submit']\").click();\nlet expName = \"Paul goud Collings\";\ncy.get(\".oxd-userdropdown-name\").then(x => {\n  let actNme = x.text();\n  // BDD Style----------------------------> take a look at cypress doc.\n  expect(actNme).to.equal(expName);\n  expect(actNme).to.not.equal(expName);\n  // TDD Style----------------------------> take a look at cypress doc.\n  assert.equal(actNme, expName);\n  assert.notEqual(actNme, expName);\n});",
+              "err": {
+                "message": "AssertionError: expected ' Robot  Framework' to equal 'Paul goud Collings'",
+                "estack": "AssertionError: expected ' Robot  Framework' to equal 'Paul goud Collings'\n    at Context.eval (webpack://cypressautomation/./cypress/e2e/Assertions.cy.js:83:30)",
+                "diff": "- ' Robot  Framework'\n+ 'Paul goud Collings'\n"
+              },
+              "uuid": "5a92b8ab-6409-459f-91cb-18afa9b3c7fe",
+              "parentUUID": "d0d40257-b2f8-471e-96c1-fc1c3ccde5ba",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "6d97189a-0b7e-4ebb-9790-376397bb0f96"
+          ],
+          "failures": [
+            "5a92b8ab-6409-459f-91cb-18afa9b3c7fe"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 17055,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "158c32d9-fb9e-476f-820a-8114df5b0f03",
+      "title": "",
+      "fullFile": "cypress/e2e/CSSLocaors.cy.js",
+      "file": "cypress/e2e/CSSLocaors.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "407096c5-42b6-4950-a826-8bdf102d4940",
+          "title": "CSSLocators",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "csslocators",
+              "fullTitle": "CSSLocators csslocators",
+              "timedOut": null,
+              "duration": 36755,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// tag#id --- tag is optional\n// tag.class --- tag is optional\n// tag[attribute = 'value'] --- tag is optional\n// tag.classname[attribute = 'value'] --- tag is optional\n// to use the xpath we need to install \"cypress-xpath\" plugin\ncy.visit(\"https://amazon.com/\");\ncy.get(\"#twotabsearchtextbox\").type(\"teapot\"); // by id --- tag is optional\ncy.get(\"#nav-search-submit-button\").click();\ncy.get(\".a-color-state.a-text-bold\").contains(\"teapot\"); //Assertion",
+              "err": {},
+              "uuid": "9d0d46ce-6faa-47d3-9db0-9bc33a4e45b0",
+              "parentUUID": "407096c5-42b6-4950-a826-8bdf102d4940",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "9d0d46ce-6faa-47d3-9db0-9bc33a4e45b0"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 36755,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "f558bc37-330e-4b15-8ac9-b184dfc968ad",
+      "title": "",
+      "fullFile": "cypress/e2e/DropDowns.cy.js",
+      "file": "cypress/e2e/DropDowns.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "8a6f7a29-f038-4c49-96a0-45c8a0cab545",
+          "title": "handle dropdowns",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Dropdown with select",
+              "fullTitle": "handle dropdowns Dropdown with select",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "// \"skip\" keyword provides that skip the this it block \ncy.visit(\"http://webdriveruniversity.com/Dropdown-Checkboxes-RadioButtons/index.html\");\ncy.get(\"#dropdowm-menu-1\").select('Python').should('have.value', 'python');",
+              "err": {},
+              "uuid": "a8f95657-95ef-4d13-942a-a45e0ac21b52",
+              "parentUUID": "8a6f7a29-f038-4c49-96a0-45c8a0cab545",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Dropdown without select",
+              "fullTitle": "handle dropdowns Dropdown without select",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "cy.visit(\"https://www.dummyticket.com/dummy-ticket-for-visa-application/\");\ncy.get(\"#select2-billing_country-container\").click();\ncy.get(\".select2-search__field\").type('Italy').type('{enter}');\ncy.get(\"#select2-billing_country-container\").should('have.text', 'Italy');",
+              "err": {},
+              "uuid": "64131cdd-e66f-45dd-a7a9-593757e6a1da",
+              "parentUUID": "8a6f7a29-f038-4c49-96a0-45c8a0cab545",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Auto Suggest dropdown",
+              "fullTitle": "handle dropdowns Auto Suggest dropdown",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "cy.visit(\"https://wikipedia.org\");\ncy.get(\"#searchInput\").type('izmir');\ncy.get('.suggestions-dropdown').contains('IZMIRAN').click();",
+              "err": {},
+              "uuid": "2f6f53dc-3af1-4381-97a2-ac26372de0ff",
+              "parentUUID": "8a6f7a29-f038-4c49-96a0-45c8a0cab545",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Dynamic dropdown",
+              "fullTitle": "handle dropdowns Dynamic dropdown",
+              "timedOut": null,
+              "duration": 34267,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"https://google.com\");\ncy.get(\"[name='q']\").type('cypress automation');\ncy.wait(3000);\ncy.get(\"div.wM6W7d>span\").should('have.length', 12);\ncy.get(\"div.wM6W7d>span\").each(($el, index, $list) => {\n  if ($el.text() == 'cypress automation tutorial') {\n    cy.wrap($el).click();\n  }\n});\ncy.get(\"[name='q']\").should('have.value', 'cypress automation tutorial');",
+              "err": {},
+              "uuid": "7769feb0-aae4-4e81-b136-2f2e8fdeb253",
+              "parentUUID": "8a6f7a29-f038-4c49-96a0-45c8a0cab545",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "7769feb0-aae4-4e81-b136-2f2e8fdeb253"
+          ],
+          "failures": [],
+          "pending": [
+            "a8f95657-95ef-4d13-942a-a45e0ac21b52",
+            "64131cdd-e66f-45dd-a7a9-593757e6a1da",
+            "2f6f53dc-3af1-4381-97a2-ac26372de0ff"
+          ],
+          "skipped": [],
+          "duration": 34267,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "9847eb78-af39-42c6-ab14-7270e2bdd22c",
+      "title": "",
+      "fullFile": "cypress/e2e/Frames.cy.js",
+      "file": "cypress/e2e/Frames.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "42504919-34f2-448e-883c-ad00c46b1351",
+          "title": "handling frames",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Approach03--by using cypress-iframe plugin",
+              "fullTitle": "handling frames Approach03--by using cypress-iframe plugin",
+              "timedOut": null,
+              "duration": 12022,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// https://www.npmjs.com/package/cypress-iframe\n// npm install -D cypress-iframe\ncy.visit(\"https://the-internet.herokuapp.com/iframe\");\ncy.frameLoaded(\"#mce_0_ifr\"); // load the frame\ncy.iframe(\"#mce_0_ifr\").clear().type(\"welcome {ctrl+a}\");\ncy.get(\"button[title='Bold']\").click();\ncy.get(\"div[class='example'] h3\").should('have.contain', 'An iFrame containing'); // no need to switch to defaultpage or parentpage lıke java.",
+              "err": {},
+              "uuid": "15be86ba-42ee-4e2b-b51b-637b1b8b431e",
+              "parentUUID": "42504919-34f2-448e-883c-ad00c46b1351",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "15be86ba-42ee-4e2b-b51b-637b1b8b431e"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 12022,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "b9d41d40-2e26-4bc0-9a53-2d204174dca7",
+      "title": "",
+      "fullFile": "cypress/e2e/MyFirstTest.cy.js",
+      "file": "cypress/e2e/MyFirstTest.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "c44bb591-3d00-4f45-a974-bb2cf8b9fb73",
+          "title": "my first test",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "verify title-Positive test",
+              "fullTitle": "my first test verify title-Positive test",
+              "timedOut": null,
+              "duration": 11109,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"https://opensource-demo.orangehrmlive.com/\");\ncy.title().should('eq', 'OrangeHRM');",
+              "err": {},
+              "uuid": "65e436da-8233-4391-ac4e-cf264046ee54",
+              "parentUUID": "c44bb591-3d00-4f45-a974-bb2cf8b9fb73",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "verify title-Negative test",
+              "fullTitle": "my first test verify title-Negative test",
+              "timedOut": null,
+              "duration": 7570,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"https://opensource-demo.orangehrmlive.com/\");\ncy.title().should('eq', 'OrangeHRM123');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected 'OrangeHRM' to equal 'OrangeHRM123'",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected 'OrangeHRM' to equal 'OrangeHRM123'\n    at Context.eval (webpack://cypressautomation/./cypress/e2e/MyFirstTest.cy.js:16:19)",
+                "diff": "- 'OrangeHRM'\n+ 'OrangeHRM123'\n"
+              },
+              "uuid": "9e564eea-3201-498c-9e92-402e0cf770ba",
+              "parentUUID": "c44bb591-3d00-4f45-a974-bb2cf8b9fb73",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "65e436da-8233-4391-ac4e-cf264046ee54"
+          ],
+          "failures": [
+            "9e564eea-3201-498c-9e92-402e0cf770ba"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 18679,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "534362b4-7f35-4200-93a3-94eb1fcba26d",
+      "title": "",
+      "fullFile": "cypress/e2e/RadioButtons-CheckBoxes.cy.js",
+      "file": "cypress/e2e/RadioButtons-CheckBoxes.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "9f443e00-687d-4665-aa4e-0600a1d32a2f",
+          "title": "Check UI Elements",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Checking Check Boxes",
+              "fullTitle": "Check UI Elements Checking Check Boxes",
+              "timedOut": null,
+              "duration": 4823,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"http://webdriveruniversity.com/Dropdown-Checkboxes-RadioButtons/index.html\");\n// Selecting al the checkboxes\ncy.get(\"#checkboxes\").should('be.visible');\n// cy.get(\"#checkboxes\").check().should('be.checked')\n// cy.get(\"#checkboxes\").first().uncheck().should('not.be.checked')\n// cy.get(\"#checkboxes\").last().uncheck().should('not.be.checked')\ncy.get(\"input[value='option-1']\").check().should('be.checked');\ncy.get(\"input[value='option-2']\").check().should('be.checked');\ncy.get(\"input[value='option-3']\").uncheck().should('not.be.checked');\n// Select the radio button\ncy.get(\"input[value='green']\").check().should('be.checked');\ncy.get(\"input[value='blue']\").check().should('be.checked');\ncy.get(\"input[value='yellow']\").check().should('be.checked');\ncy.get(\"input[value='orange']\").check().should('be.checked');\ncy.get(\"input[value='purple']\").check().should('be.checked');",
+              "err": {},
+              "uuid": "e7a12eb2-d011-44f4-98de-f17ed0852a3a",
+              "parentUUID": "9f443e00-687d-4665-aa4e-0600a1d32a2f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "e7a12eb2-d011-44f4-98de-f17ed0852a3a"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4823,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "9887e42b-4a6b-4b96-8e62-ad33dad6afc3",
+      "title": "",
+      "fullFile": "cypress/e2e/Tabs.cy.js",
+      "file": "cypress/e2e/Tabs.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "1d59cb55-66a1-4b66-ac8c-0cb1ce147487",
+          "title": "Handle tab",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Approach01",
+              "fullTitle": "Handle tab Approach01",
+              "timedOut": null,
+              "duration": 13178,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"https://the-internet.herokuapp.com/windows\"); // parent tabs\ncy.get(\".example>a\").invoke('removeAttr', 'target').click(); // removing the \"target\" attribute, after removing the \"target\" attribute new tab will not open instead new page will load in the same page\ncy.url().should('include', 'https://the-internet.herokuapp.com/windows/new');\ncy.wait(5000);\n//operationss\ncy.go('back'); // go back to parent tab",
+              "err": {},
+              "uuid": "8171b82b-ef1e-43f9-8808-2225149b4aa9",
+              "parentUUID": "1d59cb55-66a1-4b66-ac8c-0cb1ce147487",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Approach02",
+              "fullTitle": "Handle tab Approach02",
+              "timedOut": null,
+              "duration": 8059,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"https://the-internet.herokuapp.com/windows\"); // parent tabs\ncy.get(\".example>a\").then(e => {\n  let url = e.prop('href');\n  cy.visit(url); // to work main doains(https://the-internet.herokuapp.com) should be matched !!! otherwise it wil not work.\n});\ncy.url().should('include', 'https://the-internet.herokuapp.com/windows/new');\ncy.wait(5000);\n//operationss\ncy.go('back'); // go back to parent tab",
+              "err": {},
+              "uuid": "240b7036-22d2-42a3-abc1-377fc21d1c64",
+              "parentUUID": "1d59cb55-66a1-4b66-ac8c-0cb1ce147487",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "8171b82b-ef1e-43f9-8808-2225149b4aa9",
+            "240b7036-22d2-42a3-abc1-377fc21d1c64"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 21237,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "7b76d60f-edc5-4aa2-abad-622e8dc62523",
+      "title": "",
+      "fullFile": "cypress/e2e/XPathLocators.cy.js",
+      "file": "cypress/e2e/XPathLocators.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "2587ae96-0f9d-4d6d-9611-e0896f3cde9e",
+          "title": "XPathLocators",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "products",
+              "fullTitle": "XPathLocators products",
+              "timedOut": null,
+              "duration": 34808,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"https://amazon.com/\");\ncy.get(\"#twotabsearchtextbox\").type(\"teapot\"); // get is by default \"css\"\ncy.get(\"#nav-search-submit-button\").click();\ncy.xpath(\"//div[contains(@data-cel-widget,'search_result')]\").should('have.length', 67);\n// take a look at chainedxpath",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Too many elements found. Found '73', expected '67'.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Too many elements found. Found '73', expected '67'.\n    at Context.eval (webpack://cypressautomation/./cypress/e2e/XPathLocators.cy.js:13:70)",
+                "diff": "- 73\n+ 67\n"
+              },
+              "uuid": "e5fa2950-3b63-4595-b637-8b7714b7df34",
+              "parentUUID": "2587ae96-0f9d-4d6d-9611-e0896f3cde9e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "e5fa2950-3b63-4595-b637-8b7714b7df34"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 34808,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "2e484bf3-b0f6-454a-9398-370233082992",
+      "title": "",
+      "fullFile": "cypress/e2e/Alerts.cy.js",
+      "file": "cypress/e2e/Alerts.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "733a1e1e-e621-42ef-90c1-071b729ccaf5",
+          "title": "Alerts",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Authentıcated alert",
+              "fullTitle": "Alerts Authentıcated alert",
+              "timedOut": null,
+              "duration": 4669,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//approach 01\n/*\ncy.visit('https://the-internet.herokuapp.com/basic_auth',{auth:{username:\"admin\",password:\"admin\"}});\n cy.get(\"div[class='example'] p\").contains('Congratulations!');\ncy.get(\"div[class='example'] p\").should('have.contain','Congratulations!')\n */\n//approach 02\ncy.visit('https://admin:admin@the-internet.herokuapp.com/basic_auth');\ncy.get(\"div[class='example'] p\").should('have.contain', 'Congratulations!');",
+              "err": {},
+              "uuid": "03cbe4e5-8e19-407e-97b1-e50aae2e94c5",
+              "parentUUID": "733a1e1e-e621-42ef-90c1-071b729ccaf5",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "03cbe4e5-8e19-407e-97b1-e50aae2e94c5"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4669,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
