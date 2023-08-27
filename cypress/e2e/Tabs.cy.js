@@ -22,7 +22,7 @@ describe('Handle tab',()=>{
         cy.get(".example>a").then((e)=>{
 
             let url = e.prop('href')
-            cy.visit(url);
+            cy.visit(url);                    // to work main doains(https://the-internet.herokuapp.com) should be matched !!! otherwise it wil not work.
 
         })
 
