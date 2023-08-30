@@ -37,4 +37,6 @@ Cypress.Commands.add('getIframe',(iframe)=>{
 
 })
 
+require('@4tw/cypress-drag-drop')
+
 

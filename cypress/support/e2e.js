@@ -20,3 +20,4 @@ import './commands'
 // require('./commands')
 
 require('cypress-xpath'); // this code was added to recognize the xpath  
+
