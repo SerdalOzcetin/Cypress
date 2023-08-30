@@ -1,5 +1,4 @@
 import 'cypress-iframe'  
-import 'cypress-drag-drop'
 
 describe("Mouse Operations", () =>{
 
@@ -80,7 +79,7 @@ describe("Mouse Operations", () =>{
 
     });
 
-    it.only("Drag and Drop in iframe",()=>{
+    it("Drag and Drop in iframe",()=>{
 
         const dataTransfer = new DataTransfer();
 
@@ -98,5 +97,18 @@ describe("Mouse Operations", () =>{
        
 
    });
+
+   it.only("Scrolling Page",()=>{
+
+    cy.visit("https://webdriveruniversity.com/");
+
+   cy.xpath("//h1[normalize-space()='DATEPICKER']").scrollIntoView({duration:3000}); // "duration" to arrange the timing of scroll!!
+   
+   cy.xpath("//h1[normalize-space()='DATEPICKER']").should('be.visible');
+
+   cy.xpath("//h1[normalize-space()='AJAX LOADER']").scrollIntoView({duration : 3000});
+
+   cy.xpath("//h1[normalize-space()='AJAX LOADER']").should('be.visible');
+});
 
 })
