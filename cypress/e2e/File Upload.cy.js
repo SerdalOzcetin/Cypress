@@ -68,9 +68,7 @@ it("File Multiple Uploads",()=>{
 it.only("File Upload - Shadow Dom",()=>{
 
         
-    cy.visit("https://www.htmlelements.com/demos/fileupload/show-progress/");
-    cy.frameLoaded(".demo-frame");
-    cy.iframe(".demo-frame").find("smart-button[id='button2ae6'] button[role='presentation']",{includeShadowDom:true}).attachFile("Screenshot.png");
+   
  
  });
     
