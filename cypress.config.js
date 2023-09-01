@@ -10,9 +10,9 @@ module.exports = defineConfig({
     json: true,
   },
 
-  video: true,
+  video: false,
   screenshotOnRunFailure: true,
-  videoCompression: true,
+  videoCompression: false,
 
   e2e: {
     setupNodeEvents(on, config) {

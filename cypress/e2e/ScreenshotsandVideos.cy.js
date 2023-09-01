@@ -1,10 +1,11 @@
 describe("Mysuite",()=>{
 
-    it("Capture the screenshots & Videos", ()=>{
+   it("Screenshot", ()=>{
 
-        cy.visit("https://demo.opencart.com/");
-        cy.screenshot();
-        cy.get('#logo > a > .img-fluid').screenshot();
-    });
+    cy.visit("https://demo.opencart.com/");
+    cy.screenshot();
+    cy.get('#logo > a > .img-flid').screenshot();
+
+   });
 
 });
