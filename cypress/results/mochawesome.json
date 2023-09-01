@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2023-08-31T17:07:18.290Z",
-    "end": "2023-08-31T17:07:32.229Z",
-    "duration": 13939,
+    "start": "2023-09-01T19:18:56.386Z",
+    "end": "2023-09-01T19:19:28.901Z",
+    "duration": 32515,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "8771bb0c-04e1-41e4-970c-45ccd0381a2b",
+      "uuid": "83219252-5172-4b59-a979-14c051f1b449",
       "title": "",
       "fullFile": "cypress/e2e/Fixtures.cy.js",
       "file": "cypress/e2e/Fixtures.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "b66f2e63-8adf-440c-ac11-919ac315c705",
+          "uuid": "2206a3ac-d10a-42fe-bdc5-c6db7deb7eac",
           "title": "MyTestSuite",
           "fullFile": "",
           "file": "",
@@ -38,29 +38,29 @@
               "title": "FixtureDemoTest",
               "fullTitle": "MyTestSuite FixtureDemoTest",
               "timedOut": null,
-              "duration": 9016,
+              "duration": 26604,
               "state": "passed",
-              "speed": "medium",
+              "speed": "slow",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
               "code": "cy.visit(\"https://opensource-demo.orangehrmlive.com/web/index.php/auth/login\");\ncy.get(\"input[placeholder='Username']\").type(userdata.username);\ncy.get(\"input[placeholder='Password']\").type(userdata.password);\ncy.get(\"button[type='submit']\").click();\ncy.xpath(\"//span[normalize-space()='PIM']\").should('have.text', userdata.expected);",
               "err": {},
-              "uuid": "a33154f0-5fc8-4b16-80a1-c7862f5a15cf",
-              "parentUUID": "b66f2e63-8adf-440c-ac11-919ac315c705",
+              "uuid": "a7ac0ccc-2592-4030-aa69-baa0320f62ea",
+              "parentUUID": "2206a3ac-d10a-42fe-bdc5-c6db7deb7eac",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "a33154f0-5fc8-4b16-80a1-c7862f5a15cf"
+            "a7ac0ccc-2592-4030-aa69-baa0320f62ea"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 9016,
+          "duration": 26604,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
