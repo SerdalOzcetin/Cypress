@@ -35,7 +35,35 @@ Cypress.Commands.add('getIframe',(iframe)=>{
     .should('be.visible')
     .then(cy.wrap);
 
-})
+});
 
+Cypress.Commands.add("clicklink",(label)=>{
+    cy.get("a").contains(label).click();
+});
+
+// Cypress.Commands.overwriteQuery("contains",(originalFn, subject, filter, text, options = {})=>{
+
+//     if(typeof text === "object") {
+//         options = text
+//         text = filter
+//         filter = undefined
+//     }
+
+//     options.matchCase = false
+
+//     return originalFn(subject, filter, text, options)
+
+// });
+
+// Custom command for logın 
+
+Cypress.Commands.add("loginapp", (email, pass,)=>{
+
+    cy.visit("https://demo.nopcommerce.com/");
+    cy.get(".ico-login").click();
+    cy.get("#Email").type(email);
+    cy.get("#Password").type(pass);
+    cy.get("button[class='button-1 login-button']").click();
+});
 
 
