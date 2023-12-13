@@ -2,7 +2,7 @@ import 'cypress-iframe'  // after installing the "npm install -D cypress-iframe"
 
 describe('handling frames',()=>{
 
-    it("Approach01",()=>{
+    it.only("Approach01",()=>{
 
         cy.visit("https://the-internet.herokuapp.com/iframe");
 
@@ -11,7 +11,7 @@ describe('handling frames',()=>{
         .should('be.visible')
         .then(cy.wrap);
 
-        iframe.clear().type("welcome {ctrl+a}");
+        iframe.clear().type("welcome {command+a}",{delay: 150});
         cy.get("button[title='Bold']").click();
 
     })
@@ -25,7 +25,7 @@ describe('handling frames',()=>{
 
     })
 
-    it.only("Approach03--by using cypress-iframe plugin",()=>{
+    it("Approach03--by using cypress-iframe plugin",()=>{
 
         // https://www.npmjs.com/package/cypress-iframe
         // npm install -D cypress-iframe
