@@ -11,7 +11,7 @@ describe('handling frames',()=>{
         .should('be.visible')
         .then(cy.wrap);
 
-        iframe.clear().type("welcome {command+a}",{delay: 150});
+        iframe.clear().type("welcome {command+a}",{delay: 250});
         cy.get("button[title='Bold']").click();
 
     })
