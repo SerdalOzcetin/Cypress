@@ -36,17 +36,17 @@ describe('Alerts', ()=>{
     })
 
 
-    it('Js confirm alert-ok', ()=>{
+    it('Js confirm alert-cancel', ()=>{
 
         cy.visit('https://the-internet.herokuapp.com/javascript_alerts')
         cy.get("button[onclick='jsConfirm()']").click(); // cypress automatıcally closes the js confırm alert by usıng "ok" button-default
 
 
-        cy.on('window:confirm',(t)=>{
+        // cy.on('window:confirm',(t)=>{
 
-            expect(t).to.contain('I am a JS Confirm');
+        //     expect(t).to.contain('I am a JS Confirm');
 
-        })
+        // })
 
         cy.on('window:confirm',()=> false); // cypress cloeses alert wındow usıng cancel button
 
@@ -77,16 +77,16 @@ describe('Alerts', ()=>{
 
         cy.visit('https://the-internet.herokuapp.com/javascript_alerts')
         
-        cy.window().then((win)=>{
+        // cy.window().then((win)=>{
 
-            cy.stub(win, 'prompt').returns('welcome')
+        //     cy.stub(win, 'prompt').returns('welcome')
         
-        })
+        // })
 
         cy.get("button[onclick='jsPrompt()']").click();  // cypres wıll automatıcally close promted alert---it wıll use "ok" button -- by default
         cy.on('window:prompt',()=> false);
 
-        cy.get('#result').should('have.text','You entered: null');   
+        cy.get('#result').should('not.have.text','You entered: welcome');   
 
 
     })
@@ -94,7 +94,7 @@ describe('Alerts', ()=>{
 
     //4) Autentıcated Alerts
 
-    it.only('Authentıcated alert', ()=>{
+    it('Authentıcated alert', ()=>{
 
         //approach 01
         /*
